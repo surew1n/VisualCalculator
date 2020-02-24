@@ -57,6 +57,10 @@ public class Calculator {
         textField.setText("");
     }
 
+    public void ce(JTextField textField) {
+        textField.setText("");
+    }
+
     public void addValue(int num, JTextField textField) {
         values.add(num);
         textField.setText("");
