@@ -12,10 +12,11 @@ public class GUI {
         Calculator calculator = new Calculator();
         JFrame frame = new JFrame("Visual Calculator");
         JPanel mainPanel = new JPanel();
-        JPanel panel = new JPanel(new GridLayout(4, 4));
+        JPanel panel = new JPanel(new GridLayout(5, 4));
         JPanel textPanel = new JPanel();
-        Font font = new Font("Courier", Font.BOLD, 40);
+        Font font = new Font("Courier", Font.BOLD, 60);
         JTextField textField = new JTextField(textOutput);
+        textField.setHorizontalAlignment(JTextField.RIGHT);
         textField.setFont(font);
         textField.setEditable(false);
         textField.setColumns(10);
@@ -170,7 +171,25 @@ public class GUI {
                     }
                 }
         );
+        JButton b17 = new JButton("");
+        JButton b18 = new JButton("");
+        JButton b19 = new JButton("C");
+        b19.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        calculator.clear(textField);
+                    }
+                }
+        );
+        JButton b20 = new JButton("");
+        b17.setVisible(false);
+        b18.setVisible(false);
+        b20.setVisible(false);
         textPanel.add(textField);
+        panel.add(b17);
+        panel.add(b18);
+        panel.add(b19);
+        panel.add(b20);
         panel.add(b1);
         panel.add(b2);
         panel.add(b3);

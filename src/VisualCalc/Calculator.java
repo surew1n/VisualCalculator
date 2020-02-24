@@ -52,6 +52,11 @@ public class Calculator {
         textField.setText(textField.getText() + num);
     }
 
+    public void clear(JTextField textField) {
+        total = 0;
+        textField.setText("");
+    }
+
     public void addValue(int num, JTextField textField) {
         values.add(num);
         textField.setText("");
@@ -61,7 +66,4 @@ public class Calculator {
         operations.add(operation);
     }
 
-    public int getTotal() {
-        return total;
-    }
 }
