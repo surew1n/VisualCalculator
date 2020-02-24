@@ -7,6 +7,7 @@ public class Calculator {
     private int num1;
     private int num2;
     private int total = 0;
+    private boolean playSounds = false;
     private String operation = "";
     private ArrayList<Integer> values = new ArrayList<Integer>();
     private ArrayList<String> operations = new ArrayList<String>();
@@ -70,4 +71,9 @@ public class Calculator {
         operations.add(operation);
     }
 
+    public void playSound() {
+        if(playSounds == true) {
+
+        }
+    }
 }

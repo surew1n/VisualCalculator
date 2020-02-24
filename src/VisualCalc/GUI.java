@@ -142,12 +142,11 @@ public class GUI {
                     }
                 }
         );
-        JButton b14 = new JButton(".");
+        JButton b14 = new JButton("CE");
         b14.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
-                        System.out.println(((JButton)e.getSource()).getText() + " pressed");
-                        calculator.displayText(((JButton)e.getSource()).getText(), textField);
+                            calculator.ce(textField);
                     }
                 }
         );
@@ -173,24 +172,18 @@ public class GUI {
         );
         JButton b17 = new JButton("");
         JButton b18 = new JButton("");
-        JButton b19 = new JButton("C");
-        b19.addActionListener(
+        JButton b19 = new JButton("");
+        JButton b20 = new JButton("C");
+        b20.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         calculator.clear(textField);
                     }
                 }
         );
-        JButton b20 = new JButton("CE");
-        b20.addActionListener(
-                new ActionListener() {
-                    public void actionPerformed(ActionEvent e) {
-                        calculator.ce(textField);
-                    }
-                }
-        );
         b17.setVisible(false);
         b18.setVisible(false);
+        b19.setVisible(false);
         textPanel.add(textField);
         panel.add(b17);
         panel.add(b18);

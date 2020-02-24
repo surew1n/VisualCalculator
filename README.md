@@ -1,6 +1,6 @@
 # VisualCalculator
-Simple calculator application
+Simple integer calculator application
 
-Only integers right now, decimals will break the program
+C = Clear full calculation
 
-To clear, restart the program
+CE = Clear current entry
