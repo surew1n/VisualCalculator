@@ -1,0 +1,177 @@
+===== ADDITION =====
+
+OLD
+
+5, 3, 8
++, +
+5 + 3 + 8
+
+total = total + (values.get(i) + values.get(i + 1));
+total = 0 + (5 + 3)
+
+total = 8 + (3 + 8)
+
+---------------------------------------------------------------
+
+NEW
+first iteration {
+	total = (values.get(i) + values.get(i + 1));
+}
+
+all other iterations {
+	total = total + (values.get(i + 1));
+}
+
+EXAMPLE
+
+5, 3, 8, 6
++, +, +
+5 + 3 + 8 + 6
+
+first iteration {
+	total = (values.get(i) + values.get(i + 1));
+
+	total = 5 + 3
+}
+
+second iteration {
+	total = total + (values.get(i + 1));
+
+	total = 8 + 8
+}
+
+third iteration {
+	total = total + (values.get(i + 1));
+
+	total = 16 + 6
+}
+
+expected output = 22
+actual output = 22
+
+===== SUBTRACTION =====
+
+5, 3, 8, 6
+-, -, -
+5 - 3 - 8 - 6
+
+first iteration = {
+	total = (values.get(i) - values.get(i + 1));
+
+	total = 5 - 3
+}
+
+second iteration = {
+	total = total - values.get(i + 1);
+
+	total = 2 - 8
+}
+
+third iteration = {
+	total = total - values.get(i + 1);
+
+	total = -6 - 6
+}
+
+expected output = -12
+actual output = -12
+
+---------------------------------------------------------------
+
+===== BOTH ADDITION AND SUBTRACTION =====
+
+5, 3, 8, 6
++, -, +
+5 + 3 - 8 + 6
+
+RUN THROUGH
+
+i = 0
+total = 5 + 3
+
+i = 1
+total = 8 - 8
+
+i = 2
+total = 0 + 6
+
+expected output = 6
+actual output = 6
+
+---------------------------------------------------------------
+
+===== MULTIPLICATION =====
+
+5, 3, 8, 6
+*, *, *
+5 * 3 * 8 * 6
+
+first iteration {
+	total = values.get(i) * values.get(i + 1);
+
+	total = 5 * 3
+}
+
+second iteration {
+	total = total * values.get(i + 1);
+
+	total = 15 * 8
+}
+
+third iteration {
+	total = total * values.get(i + 1);
+
+	total = 15 * 8
+}
+
+expected ouput = 720
+actual output = 720
+
+===== PROBLEMS =====
+
+PROBLEM (CANT DO MULTIPLE MULTIPLICATION OPERATIONS AFTER ONE HAS BEEN COMPLETE)
+
+PROBLEM SOLVED
+
+removed the extra values.add(total) on line 60
+changed all instances in code of "calculator.getDisplayField()" to "textfield.getText()"
+
+---------------------------------------------------------------
+
+===== DIVISION =====
+
+20, 2, 5, 2
+/, /, /
+20 / 2 / 5 / 2
+
+first iteration {
+	total = values.get(i) / values.get(i + 1);
+
+	total = 20 / 2
+} 
+
+second iteration {
+	total = total / values.get(i + 1)
+
+	total = 10 / 5
+}
+
+third iteration {
+	total = total / values.get(i + 1)
+
+	total = 2 / 2
+}
+
+expected ouput = 1
+actual output = 1
+
+---------------------------------------------------------------
+
+===== FINAL COMBINATION (ALL OPERATIONS) =====
+
+5, 9, 8, 7, 6
++, -, *, /
+5 + 9 - 8 * 7 / 6
+
+expected output = 7
+actual output = 7

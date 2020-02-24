@@ -1,0 +1,32 @@
+===== Operation Algorithm =====
+
+method ran from press of = button
+
+
+two array lists - values, operators
+values array will have 1 more index than operators
+
+-------------------------------
+
+for loop {
+	iterate through the values list
+	use the current index for the first number and operator, use the current index + 1 for the second number
+}
+
+
+if statements for operations
+
+if (operation.equals("addition")) {
+	current total + operation
+}
+
+values = {5, 1, 3, 7}
+operators = {+, - , *}
+
+
+===== Problems =====
+
+// FIXED
+for loop goes once, works fine
+when i = 1, program crashes at line 21 out of bounds error as there is only one operation not 2
+// FIXED
