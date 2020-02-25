@@ -7,7 +7,7 @@ public class Calculator {
     private int num1;
     private int num2;
     private int total = 0;
-    private boolean playSounds = false;
+    private boolean soundOption = false;
     private String operation = "";
     private ArrayList<Integer> values = new ArrayList<Integer>();
     private ArrayList<String> operations = new ArrayList<String>();
@@ -56,6 +56,7 @@ public class Calculator {
     public void clear(JTextField textField) {
         total = 0;
         textField.setText("");
+        values.clear();
     }
 
     public void ce(JTextField textField) {
@@ -71,9 +72,17 @@ public class Calculator {
         operations.add(operation);
     }
 
-    public void playSound() {
-        if(playSounds == true) {
-
+    public void calcSound() {
+        if (soundOption == true) {
+            PlayAudio.playSound("click.wav");
         }
+    }
+
+    public boolean getSoundOption() {
+        return soundOption;
+    }
+
+    public void setSoundOption(boolean option) {
+        soundOption = option;
     }
 }

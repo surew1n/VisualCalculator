@@ -6,10 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class GUI {
+    Calculator calculator = new Calculator();
     private String textOutput = "";
 
     public GUI() {
-        Calculator calculator = new Calculator();
         JFrame frame = new JFrame("Visual Calculator");
         JPanel mainPanel = new JPanel();
         JPanel panel = new JPanel(new GridLayout(5, 4));
@@ -26,6 +26,7 @@ public class GUI {
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
                         b1.setFocusPainted(true);
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.displayText(((JButton)e.getSource()).getText(), textField);
                     }
@@ -35,6 +36,7 @@ public class GUI {
         b2.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.displayText(((JButton)e.getSource()).getText(), textField);
                     }
@@ -44,6 +46,7 @@ public class GUI {
         b3.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.displayText(((JButton)e.getSource()).getText(), textField);
                     }
@@ -53,6 +56,7 @@ public class GUI {
         b4.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.addValue(Integer.parseInt((textField.getText())), textField);
                         calculator.addOperation("÷");
@@ -63,6 +67,7 @@ public class GUI {
         b5.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.displayText(((JButton)e.getSource()).getText(), textField);
                     }
@@ -72,6 +77,7 @@ public class GUI {
         b6.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.displayText(((JButton)e.getSource()).getText(), textField);
                     }
@@ -81,6 +87,7 @@ public class GUI {
         b7.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.displayText(((JButton)e.getSource()).getText(), textField);
                     }
@@ -90,6 +97,7 @@ public class GUI {
         b8.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.addValue(Integer.parseInt((textField.getText())), textField);
                         calculator.addOperation("×");
@@ -100,6 +108,7 @@ public class GUI {
         b9.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.displayText(((JButton)e.getSource()).getText(), textField);
                     }
@@ -109,6 +118,7 @@ public class GUI {
         b10.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.displayText(((JButton)e.getSource()).getText(), textField);
                     }
@@ -118,6 +128,7 @@ public class GUI {
         b11.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.displayText(((JButton)e.getSource()).getText(), textField);
                     }
@@ -127,6 +138,7 @@ public class GUI {
         b12.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.addValue(Integer.parseInt((textField.getText())), textField);
                         calculator.addOperation("-");
@@ -137,6 +149,7 @@ public class GUI {
         b13.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.displayText(((JButton)e.getSource()).getText(), textField);
                     }
@@ -146,6 +159,7 @@ public class GUI {
         b14.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                            calculator.calcSound();
                             calculator.ce(textField);
                     }
                 }
@@ -154,6 +168,7 @@ public class GUI {
         b15.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.addValue(Integer.parseInt((textField.getText())), textField);
                         calculator.operation(textField);
@@ -164,24 +179,39 @@ public class GUI {
         b16.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         System.out.println(((JButton)e.getSource()).getText() + " pressed");
                         calculator.addValue(Integer.parseInt((textField.getText())), textField);
                         calculator.addOperation("+");
                     }
                 }
         );
-        JButton b17 = new JButton("");
+        JButton b17 = new JButton("Sound On");
+        b17.addActionListener(
+                new ActionListener() {
+                    public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
+                        if(calculator.getSoundOption() == false) {
+                            calculator.setSoundOption(true);
+                            b17.setText("Sound Off");
+                        } else {
+                            calculator.setSoundOption(false);
+                            b17.setText("Sound On");
+                        }
+                    }
+                }
+        );
         JButton b18 = new JButton("");
         JButton b19 = new JButton("");
         JButton b20 = new JButton("C");
         b20.addActionListener(
                 new ActionListener() {
                     public void actionPerformed(ActionEvent e) {
+                        calculator.calcSound();
                         calculator.clear(textField);
                     }
                 }
         );
-        b17.setVisible(false);
         b18.setVisible(false);
         b19.setVisible(false);
         textPanel.add(textField);
